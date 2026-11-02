@@ -348,7 +348,7 @@ var K=[
   ["Total Calls","267","Calls made, 26\u201330 Oct 2026",100,""],
   ["Connected Calls","57","Calls answered by a person",21.35,""],
   ["Connected Rate","21.35%","Connected calls \u00f7 total calls",21.35,"y"],
-  ["Callbacks / Follow-ups","11","None recorded this week",0,""],
+  ["Callbacks / Follow-ups","11","11 call backs were recorded this week",0,""],
   ["Appointments Set","3","Appointments booked",4.88,"y"],
   ["Appointment Rate","5.26%","Appointments \u00f7 connected calls",4.88,"y"]
 ];
@@ -358,7 +358,7 @@ var Kp=[
   ["Total Calls","203","Calls made, 26\u201330 Oct 2026",100,""],
   ["Connected Calls","41","Calls answered by a person",20.2,""],
   ["Connected Rate","20.20%","Connected calls \u00f7 total calls",20.2,"y"],
-  ["Callbacks / Follow-ups","0","None recorded this week",0,""],
+  ["Callbacks / Follow-ups","0","No call backs or follow-ups were recorded this week",0,""],
   ["Appointments Set","2","Appointments booked",4.88,"y"],
   ["Appointment Rate","4.88%","Appointments \u00f7 connected calls",4.88,"y"]
 ];
@@ -378,7 +378,7 @@ renderKPIs(Kp, "kpis-prev");
 /* --- SVG Charts --- */
 var defs='<defs><linearGradient id="d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2FB8D6"/><stop offset="1" stop-color="#0B5C9E"/></linearGradient><linearGradient id="e" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD21F"/><stop offset="1" stop-color="#F7931E"/></linearGradient><linearGradient id="a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0B5C9E"/><stop offset="1" stop-color="#2FB8D6"/></linearGradient></defs>';
 
-var rows=[["Total calls",203,"a"],["Connected",41,"d"],["Call backs",0,"d"],["Appointments",2,"e"]];
+var rows=[["Total calls",203,"a"],["Connected",41,"d"],["Call backs",11,"d"],["Appointments",2,"e"]];
 var s='<svg viewBox="0 0 520 250" role="img" aria-label="Call activity overview">'+defs;
 rows.forEach(function(r,i){
   var y=22+i*58, w=Math.max(r[1]/203*330,r[1]?8:0);
@@ -408,7 +408,7 @@ $("wk").innerHTML=[["Week","19\u201323 Oct 2026"],["Calls made","267"],["Connect
 var INS=[
   "267 calls were placed this week and 57 reached a person, a 21.35% connected rate, or about one in five dials.",
   "One appointment was booked from 57 connected conversations, an appointment rate of 5.26%.",
-  "No call backs or follow-ups were recorded this week, so there is no callback pipeline carrying into next week.",
+  "11 call backs were recorded this week, indicating a need to follow up with potential leads.",
   "57 connected conversations did not result in a booking, so conversion after connection is the clearest area to improve alongside the connected rate."
 ];
 $("insl").innerHTML=INS.map(function(l){return "<li>"+l+"</li>"}).join("");
@@ -417,7 +417,7 @@ $("insl").innerHTML=INS.map(function(l){return "<li>"+l+"</li>"}).join("");
 $("rep").innerHTML=[
   ["Reporting period","26\u201330 October 2026"],
   ["Calls made","267"],["Calls connected","57"],
-  ["Connected rate","21.35%"],["Call backs","0"],
+  ["Connected rate","21.35%"],["Call backs","11"],
   ["Appointments booked","3"],["Appointment rate","5.26%"]
 ].map(function(r){return "<tr><td>"+r[0]+"</td><td>"+r[1]+"</td></tr>"}).join("");
 
